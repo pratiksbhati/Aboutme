@@ -1,11 +1,17 @@
-The First Readers-Writers problem gives priority to the reader processes. However, this results in the starvation of the writers as there is the possibility of new 
-readers always coming in, and the writer processes get starved. Similarily, the Second Readers Writers problem gives priority to the writers. Similar to above, there
-is a possibility of readers getting starved. We aim in solving this problem by 
+The First Readers-Writers problem gives priority to the reader processes. However, this results in 
+the starvation of the writers as there is the possibility of new readers always coming in, and the 
+writer processes get starved. Similarily, the Second Readers Writers problem gives priority to the 
+writers. Similar to above, there is a possibility of readers getting starved. We aim in finding the 
+
 The Solution idea:
-Let's first consider a writer process. First the process will check the number of active and waiting readers. If both, the number of waiting readers and number of 
-active readers are zero, then the it will read away directly. Otherwise, it will wait until a reader process signals and allows that writer to enter.Once the 
-writer process is done, if it is the last writer, then it will signal and allow all  the writers "waiting" readers process to enter. Similarily, the last reader 
-process will signal and allow the "waiting" writers processes to enter. 
-The solution can be visualized by imagining a room and two benches outside the room for waiting reader and writer process. Suppose you are a writer, if there is 
-no reader inside and no reader on the bench, you can enter. If there are readers inside, then the last reader before leaving will allow all the writers on the bench 
-to enter in the room. Similarily, the last writer to leave the room will allow all the readers on the bench to enter.
+Let's first consider a writer process. First the process will check the number of active and waiting 
+readers. If both, the number of waiting readers and number of active readers are zero, then the it will 
+read away directly. Otherwise, it will wait until a reader process signals and allows that writer to enter.
+Once the writer process is done, if it is the last writer, then it will signal and allow all  the writers 
+"waiting" readers process to enter. Similarily, the last reader process will signal and allow the "waiting" 
+writers processes to enter. 
+The solution can be visualized by imagining a room and two benches outside the room for waiting reader and 
+writer process. Suppose you are a writer, if there is no reader inside and no reader on the bench, you can 
+enter. If there are readers inside, then the last reader before leaving will allow all the writers on the bench 
+to enter in the room. Similarily, the last writer to leave the room will allow all the readers on the bench to 
+enter.
